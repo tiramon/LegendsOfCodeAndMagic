@@ -15,7 +15,7 @@ import java.util.HashMap;
  * Created by aCat on 2018-03-22.
  */
 public final class Constants {
-	public static int VERBOSE_LEVEL = 0; // 3 - full, 2 - without turn details, 1 - results only, 0 - silent
+	public static int VERBOSE_LEVEL = 1; // 3 - full, 2 - without turn details, 1 - results only, 0 - silent
 
 	public static final int CARDS_IN_DECK = 30; // 30;
 	public static final int CARDS_IN_DRAFT = 60; // 60;

@@ -25,7 +25,7 @@ public class CommandLineInterface {
 					.addOption("p2", true, "Required. Player 2 command line.")
 					.addOption("p3", true, "Player 3 command line.").addOption("p4", true, "Player 4 command line.")
 					.addOption("s", false, "Server mode").addOption("l", true, "File output for logs")
-					.addOption("d", false, "Referee initial data");
+					.addOption("d", true, "Referee initial data");
 
 			CommandLine cmd = new DefaultParser().parse(options, args);
 
@@ -43,6 +43,13 @@ public class CommandLineInterface {
 			GameResult result = (GameResult) getGameResult.get(runner);
 
 			if (cmd.hasOption("d")) {
+				String data = cmd.getOptionValue("d");
+				Properties prop = new Properties();
+				for (String entry : data.split(";")) {
+					String[] values = entry.split("=");
+					prop.setProperty(values[0], values[1]);
+				}
+				runner.setGameParameters(prop);
 				// result.refereeInput = cmd.getOptionValue("d");
 			}
 
