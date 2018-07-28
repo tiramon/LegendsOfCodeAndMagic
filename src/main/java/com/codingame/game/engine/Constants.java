@@ -48,8 +48,7 @@ public final class Constants {
 	public static void LoadCardlist(String cardsetPath) {
 		BufferedReader bufferedReader = null;
 		try {
-			bufferedReader = new BufferedReader(
-					new InputStreamReader(ClassLoader.getSystemResourceAsStream(cardsetPath), "UTF-8"));
+			bufferedReader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(cardsetPath), "UTF-8"));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
